@@ -55,12 +55,12 @@
       body: formData,
       headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
-    .then(response => {
-      if( response.ok ) {
-        return response.text();
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
+    .then(async response => {
+      const data = await response.text();
+      if (!response.ok) {
+        throw new Error(data || `${response.status} ${response.statusText}`);
       }
+      return data;
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
@@ -78,7 +78,7 @@
 
   function displayError(thisForm, error) {
     thisForm.querySelector('.loading').classList.remove('d-block');
-    thisForm.querySelector('.error-message').innerHTML = error;
+    thisForm.querySelector('.error-message').textContent = error.message || String(error);
     thisForm.querySelector('.error-message').classList.add('d-block');
   }
 

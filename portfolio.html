@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio</title>
+  <title>Portfolio | Christopher Wekesa</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -44,7 +44,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename text-success">Chris Tech solutions</h1>
+        <h1 class="sitename text-success">Chris Tech Solutions</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -54,23 +54,6 @@
           <li><a href="resume.html">Resume</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html" class="active">Portfolio</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -111,18 +94,21 @@
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">            
-            <li data-filter=".filter-product">Products</li>
+            <li class="filter-active" data-filter="*">All</li>
+            <li data-filter=".filter-app">Websites</li>
+            <li data-filter=".filter-product">Digital</li>
+            <li data-filter=".filter-branding">Branding</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/wordpress-.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/wordpress-.jpg" class="img-fluid" alt="Website design concept">
                 <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Customizable websites</p>
-                  <a href="assets/img/portfolio/wordpress-.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <h4>Website concept</h4>
+                  <p>Customizable website design</p>
+                  <a href="assets/img/portfolio/wordpress-.jpg" title="Website concept" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -130,11 +116,11 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/social-media.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/social-media.jpg" class="img-fluid" alt="Integrated website concept">
                 <div class="portfolio-info">
-                  <h4>Intergrated Websites</h4>
+                  <h4>Integrated websites</h4>
                   <p>Social Websites</p>
-                  <a href="assets/img/portfolio/portfolio-10.webp" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/social-media.jpg" title="Integrated website concept" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -142,11 +128,11 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/web-design.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/web-design.jpg" class="img-fluid" alt="Web design concept">
                 <div class="portfolio-info">
-                  <h4>Euniqe</h4>
-                  <p>Best Designs</p>
-                  <a href="assets/img/portfolio/portfolio-7.webp" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <h4>Visual design concept</h4>
+                  <p>Web design and branding</p>
+                  <a href="assets/img/portfolio/web-design.jpg" title="Web design concept" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -164,18 +150,15 @@
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
-      <h3 class="sitename">Personal</h3>
+      <h3 class="sitename">Chris Tech Solutions</h3>
       <p>This web page reflects my personal journey and creative growth as a web designer.</p>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="contact.html" aria-label="Contact"><i class="bi bi-envelope"></i></a>
+        <a href="portfolio.html" aria-label="Portfolio"><i class="bi bi-briefcase"></i></a>
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Personal</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">Chris Tech Solutions</strong> <span>All Rights Reserved</span>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
