@@ -24,6 +24,13 @@ class PortfolioPagesTests(TestCase):
             with self.subTest(path=path):
                 self.assertEqual(self.client.get(path).status_code, 200)
 
+    def test_index_html_alias_renders_the_homepage(self):
+        root_response = self.client.get("/")
+        index_response = self.client.get("/index.html")
+
+        self.assertEqual(index_response.status_code, 200)
+        self.assertEqual(index_response.content, root_response.content)
+
 
 @override_settings(
     EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend",

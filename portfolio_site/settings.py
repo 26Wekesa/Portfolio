@@ -34,7 +34,7 @@ DEFAULT_FROM_EMAIL = os.environ.get(
     "DEFAULT_FROM_EMAIL", EMAIL_HOST_USER or "webmaster@localhost"
 )
 CONTACT_RECIPIENT = os.environ.get(
-    "CONTACT_RECIPIENT", "wekesachristopher26@gmail.com"
+    "CONTACT_RECIPIENT", "wekesachristopher@gmail.com"
 )
 if EMAIL_USE_TLS and EMAIL_USE_SSL:
     raise ImproperlyConfigured("Choose either EMAIL_USE_TLS or EMAIL_USE_SSL, not both.")

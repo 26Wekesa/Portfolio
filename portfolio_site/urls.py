@@ -7,6 +7,7 @@ from core import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.page, {"template_name": "index.html"}, name="home"),
+    path("index.html", views.page, {"template_name": "index.html"}, name="home-file"),
     path("about.html", views.page, {"template_name": "about.html"}, name="about"),
     path("resume.html", views.page, {"template_name": "resume.html"}, name="resume"),
     path("services.html", views.page, {"template_name": "services.html"}, name="services"),

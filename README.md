@@ -21,7 +21,7 @@ $env:EMAIL_USE_TLS = "1"
 $env:EMAIL_HOST_USER = "your-smtp-user"
 $env:EMAIL_HOST_PASSWORD = "your-smtp-password"
 $env:DEFAULT_FROM_EMAIL = "your-sender@example.com"
-$env:CONTACT_RECIPIENT = "wekesachristopher26@gmail.com"
+$env:CONTACT_RECIPIENT = "wekesachristopher@gmail.com"
 py manage.py runserver
 ```
 
