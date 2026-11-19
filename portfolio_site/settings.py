@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+import dj_database_url
 from django.core.exceptions import ImproperlyConfigured
 
 
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -79,12 +81,27 @@ TEMPLATES = [
 WSGI_APPLICATION = "portfolio_site.wsgi.application"
 ASGI_APPLICATION = "portfolio_site.asgi.application"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if DATABASE_URL:
+    default_database = dj_database_url.parse(
+        DATABASE_URL,
+        conn_max_age=600,
+        ssl_require=not DEBUG,
+    )
+    if not DEBUG and default_database["ENGINE"] != "django.db.backends.postgresql":
+        raise ImproperlyConfigured("DATABASE_URL must use PostgreSQL when DEBUG is disabled.")
+    DATABASES = {"default": default_database}
+elif DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
+else:
+    raise ImproperlyConfigured(
+        "Set DATABASE_URL to a PostgreSQL connection URL when DJANGO_DEBUG is disabled."
+    )
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
@@ -101,5 +118,13 @@ USE_TZ = True
 STATIC_URL = "/assets/"
 STATICFILES_DIRS = [BASE_DIR / "assets"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+    },
+}
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
